@@ -1,10 +1,9 @@
 const express = require('express');
 const socketio = require('socket.io');
-//const mongoose = require('mongoose')
+
 const http = require('http');
 const cors = require('cors');
-//const PORT = process.env.PORT || 5000;
-//const CONNECTION_URL ='mongodb+srv://talktomeapp:talktomeapp123@cluster0.oipqm.mongodb.net/<dbname>?retryWrites=true&w=majority'
+
 const {addUser, removeUser, getUser, getUsersInRoom} = require('./users.js');
 
 
@@ -61,9 +60,6 @@ io.on('connection', (socket) => {
     })
 })
 
-// mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
-// .then(()=> app.listen(process.env.PORT || 4999))
-// .catch((error) => console.log(error.message))
-// mongoose.set('useFindAndModify', false)
+
 
 server.listen(process.env.PORT || 5000);
